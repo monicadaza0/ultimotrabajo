@@ -207,7 +207,7 @@ int main () {
    // PUNTO ONCE //
    
    printf ("once  punto \n\n");
-    float capital_prestado;
+   float capital_prestado;
     float interes_anual;
     float interes_mensual ;
     float anios_de_duracion ;
@@ -233,8 +233,7 @@ int main () {
     
     interes_mensual= (interes_anual)/12 / 100 ;
     
-    cuota = capital_prestado * (interes_mensual * pow(1 + interes_mensual, duracion_en_meses)) / (pow(1 + interes_mensual, duracion_en_meses) - 1);
-
+    cuota = (capital_prestado * interes_mensual) / ((1 - (pow (1 + (interes_mensual / 100),-duracion_en_meses)))*100);
     
     total = cuota * duracion_en_meses ;
     
@@ -247,7 +246,7 @@ int main () {
     printf("Cuota mensual: %.2f\n", cuota);
     printf("Total pagado al finalizar el préstamo: %.2f\n", total);
     printf("Cantidad de amortización: %.2f\n", cantidad_de_amortizacion);
-    printf("Cantidad de intereses: %.2f\n\n", cantidad_de_intereses);
+    printf("Cantidad de intereses: %.2f\n", cantidad_de_intereses);
 
     //FIN//
 return 0;
